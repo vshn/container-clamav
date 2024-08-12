@@ -1,0 +1,11 @@
+LogTime yes
+LogClean yes
+LogVerbose yes
+
+DatabaseDirectory /var/lib/clamav
+
+TCPSocket ${CLAMD_LISTEN_PORT}
+TCPAddr 0.0.0.0
+
+ExitOnOOM no
+Foreground yes
