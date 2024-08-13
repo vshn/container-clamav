@@ -1,12 +1,10 @@
 FROM docker.io/library/alpine:3.19
 
-ENV CLAMD_LISTEN_PORT=3310 \
-    CLAMAV_VERSION=1.2.2-r0
+ENV CLAMAV_VERSION=1.2.2-r0
 
 RUN apk add --no-cache \
       clamav-daemon=${CLAMAV_VERSION} \
-      clamav-libunrar=${CLAMAV_VERSION} \
-      gettext
+      clamav-libunrar=${CLAMAV_VERSION} 
 
 COPY config/ /etc/clamav/
 
@@ -18,7 +16,5 @@ RUN chgrp -R 0 \
       /var/lib/clamav/ \
  && freshclam
 
-COPY entrypoint.sh /usr/local/bin/
 
-ENTRYPOINT [ "/usr/local/bin/entrypoint.sh"]
 CMD [ "clamd" ]
