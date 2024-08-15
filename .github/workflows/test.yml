@@ -1,0 +1,19 @@
+name: Test
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Docker build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t test .
+      - name: Run image
+        run: docker run -d --name clamav test
+      - name: Verify
+        run: |
+          [ $(docker inspect clamav --format='{{.State.Running}}') = 'true' ]
