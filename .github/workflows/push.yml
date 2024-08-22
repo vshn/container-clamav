@@ -2,14 +2,14 @@ name: Build & Push Container Image
 on:
   push:
     branches:
-      - main 
+      - main
     tags:
       - "v*"
   pull_request: {}
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: vshn/clamav
 
 jobs:
   # Push image to GitHub Packages.
