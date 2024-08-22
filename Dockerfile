@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.19
+FROM docker.io/library/alpine:3.20
 
 # renovate: datasource=repology depName=alpine_3_19/clamav versioning=loose
 ENV CLAMAV_VERSION="1.2.2-r0"
