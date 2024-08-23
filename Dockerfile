@@ -1,6 +1,7 @@
+# NOTE: also update the renovate comment below if you change the minor version!
 FROM docker.io/library/alpine:3.20.2@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
 
-# renovate: datasource=repology depName=alpine_3_19/clamav versioning=loose
+# renovate: datasource=repology depName=alpine_3_20/clamav versioning=loose
 ENV CLAMAV_VERSION="1.2.2-r0"
 
 RUN apk add --no-cache \
