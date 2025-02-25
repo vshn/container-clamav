@@ -9,14 +9,16 @@ RUN apk add --no-cache \
       clamav-libunrar=${CLAMAV_VERSION} 
 
 COPY config/ /etc/clamav/
+COPY run-freshclam-clamd.sh /usr/local/bin/
 
 RUN chgrp -R 0 \
       /etc/clamav/ \
       /var/lib/clamav/ \
  && chmod -R g=u \
       /etc/clamav/ \
-      /var/lib/clamav/ \
- && freshclam
+      /var/lib/clamav/
 
+# Interval in seconds to run freshclam
+ENV FRESHCLAM_INTERVAL=3600
 
-CMD [ "clamd" ]
+CMD [ "/usr/local/bin/run-freshclam-clamd.sh" ]
