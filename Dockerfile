@@ -1,5 +1,5 @@
 # NOTE: also update the renovate comment below if you change the minor version!
-FROM docker.io/library/alpine:3.21.3@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
+FROM docker.io/library/alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659
 
 # renovate: datasource=repology depName=alpine_3_21/clamav versioning=loose
 ENV CLAMAV_VERSION="1.4.2-r0"
