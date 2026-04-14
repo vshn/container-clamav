@@ -9,9 +9,9 @@ jobs:
     name: Docker build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Build image
-        run: docker build -t test .
+        run: docker build -t test -f Containerfile .
       - name: Run image
         run: docker run -d --name clamav test
       - name: Verify
