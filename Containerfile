@@ -1,4 +1,4 @@
-FROM clamav/clamav:1.5.3@sha256:7f5389ccaa2368c383fa80e167ccfe44348d71e685f926fce4755eed1757673a
+FROM clamav/clamav:1.5.3@sha256:24cab211a882e9f767b84b76afe197d82554306ad6d43b782f80cd6aa1e61427
 
 RUN chgrp -R 0 /var/log/clamav /var/lib/clamav/ \
  && chmod -R g+rwX /var/log/clamav /var/lib/clamav/
